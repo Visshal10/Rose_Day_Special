@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Just for today</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #fff1f3, #ffe4e6);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #444;
+    }
+
+    .card {
+      background: #ffffffee;
+      width: min(92%, 420px);
+      padding: 28px;
+      border-radius: 18px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+      text-align: center;
+      animation: fadeIn 0.8s ease;
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 26px;
+      color: #c9184a;
+    }
+
+    .roses {
+      font-size: 26px;
+      margin: 18px 0;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 22px;
+      font-size: 15px;
+      border-radius: 25px;
+      border: none;
+      background: #ff4d6d;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    button:hover {
+      background: #e5383b;
+      transform: scale(1.05);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .signature {
+      margin-top: 24px;
+      font-size: 14px;
+      color: #777;
+      text-align: right;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+      100% { transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- PAGE 1 -->
+  <div class="card" id="page1">
+    <h1>Hey…</h1>
+    <p>Just a small pause from your busy day 🌿</p>
+
+    <div class="roses">🌹 🌷 🌹</div>
+
+    <button onclick="goNext()">Take a moment</button>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="card hidden" id="page2">
+    <h1>Happy Rose Day 🌹</h1>
+
+    <div class="roses">🌹 🌹 🌹</div>
+
+    <p>
+      I know your days have been quite hectic lately.<br>
+      So this is just a gentle reminder —
+      someone is genuinely proud of you.
+    </p>
+
+    <p>
+      Keep trusting yourself, keep moving forward,
+      and don’t forget to breathe in between.
+    </p>
+
+    <p>
+      Hope this brought a small smile to your day 🙂
+    </p>
+
+    <div class="signature">
+      — Someone cheering for you
+    </div>
+  </div>
+
+  <script>
+    function goNext() {
+      document.getElementById("page1").classList.add("hidden");
+      document.getElementById("page2").classList.remove("hidden");
+    }
+  </script>
+
+</body>
+</html>
